@@ -1,0 +1,29 @@
+#>11111111111111111111111111111111111111111111111111111111111111
+#- Local epicsEnvSet
+epicsEnvSet("G_TOP_1", "$(L_T_1)")
+epicsEnvSet("G_DEV_1", "$(L_D_1)_0")
+
+#-
+#-
+#-
+#- Local $(L_T_1)
+echo "$(L_T_1)"
+#- Local $(L_D_1)
+echo "$(L_D_1)"
+#-
+#- Global TOP
+echo "$(G_TOP)"
+#- Global Device
+echo "$(G_DEV)"
+#-
+#- Global TOP 1, defined in Local 1-1.iocsh
+echo "$(G_TOP_1)"
+#- Global DEV 1, defined in Local 1-1.iocsh
+echo "$(G_DEV_1)"
+#-
+#-
+#-
+$(IOCSHCMD=iocshLoad) ("$(G_TOP_1)/2-1.iocsh", "L_T_2=$(G_TOP_1), L_D_2=$(G_DEV_1)")
+#>11111111111111111111111111111111111111111111111111111111111111
+
+
