@@ -139,7 +139,8 @@ epicsEnvSet IOCSH_PS1 "87712cc.faiserv.20775 > "
 
 ## Conclusion
 
-* runScript, iocshLoad, and loadIocsh (this is the exact same version of runScript) are identical results
-* if we don't use `epicsEnvSet` within the transferred macron will existent only in a local variables. 
-
+* runScript, iocshLoad, and loadIocsh, which is the same as runScript, have the identical results.
+* If we don't use `epicsEnvSet` within the transferred macron will existent only in local variables. 
+* If we use `epicsEnvSet` within `iocsh` files, it will be global macron variable after this.
+* If we redefine any macro variable with `epicsEnvSet`, the variable is overridden by new one from that line. 
 
